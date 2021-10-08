@@ -35,4 +35,8 @@ export class CompanyService {
   deleteCompany(id: number): Observable<any> {
     return this.http.delete<Company>(this.apiRoot + 'company/' + id);
   }
+
+  getAddress(cep: string): Observable<any> {
+    return this.http.get(`https://viacep.com.br/ws/${cep}/json`);
+  }
 }

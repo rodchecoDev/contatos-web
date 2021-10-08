@@ -92,4 +92,15 @@ export class CompanyDetailsComponent implements OnInit {
     }
   }
 
+  getCep(event: Event) {
+    let cep = (event.target as HTMLInputElement).value.replace(/\D/g, '');
+    this.companyService.getAddress(cep).subscribe(address => {
+      this.companyForm.controls['addressLogradouro'].setValue(address.logradouro);
+      this.companyForm.controls['addressComplemento'].setValue(address.complemento);
+      this.companyForm.controls['addressBairro'].setValue(address.bairro);
+      this.companyForm.controls['addressCidade'].setValue(address.localidade);
+      this.companyForm.controls['addressUf'].setValue(address.uf);
+    });
+  }
+
 }

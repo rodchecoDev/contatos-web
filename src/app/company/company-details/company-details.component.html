@@ -21,7 +21,7 @@
 
         <mat-form-field class="field" appearance="outline" floatLabel="always">
             <mat-label>Cep</mat-label>
-            <input matInput formControlName="addressCep">
+            <input matInput formControlName="addressCep" (blur)="getCep($event)">
         </mat-form-field>
 
         <mat-form-field class="field" appearance="outline" floatLabel="always">
@@ -51,7 +51,6 @@
 
         <mat-form-field class="field" appearance="outline" floatLabel="always">
             <mat-label>UF</mat-label>
-            <input matInput formControlName="addressUf">
             <mat-select placeholder="Escolha um estado" formControlName="addressUf">
                 <mat-option value="AC">Acre</mat-option>
                 <mat-option value="AL">Alagoas</mat-option>
