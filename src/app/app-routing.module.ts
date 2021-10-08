@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: 'contatos',
     loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+  },
+  {
+    path: 'empresas',
+    loadChildren: () => import('./company/company.module').then(m => m.CompanyModule)
   }
 ];
 
